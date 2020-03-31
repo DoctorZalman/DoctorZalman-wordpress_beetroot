@@ -19,6 +19,7 @@ add_image_size( 'mytheme-mini', 770, 400, true );
 
 add_image_size( 'mytheme-square', 600, 600, true );
  
+wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array(), '1.0.1', true);
 
 
 function my_scripts_and_styles() {
@@ -36,13 +37,15 @@ function my_scripts_and_styles() {
     wp_enqueue_script('aos', get_template_directory_uri().'/js/aos.js', array('jquery'), '1.0.1', true);
     wp_enqueue_script('animateNumber', get_template_directory_uri().'/js/jquery.animateNumber.min.js', array('jquery'), '1.0.1', true);
     wp_enqueue_script('scrollax', get_template_directory_uri().'/js/scrollax.min.js', array('jquery'), '1.0.1', true);
-    // wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCDCApeoMpSTQxvz14Yhh09zlsw8FhB2ck', array(''), '1.0.1', true);
-    // wp_enqueue_script('google-map-scritps', get_template_directory_uri() . '/js/google-map.js', array('google-map'), '1.0.1', true);
-    // wp_enqueue_script('readitblog-googleapis', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false', array(''), '1.0.1', true);
+    
+    wp_enqueue_script('readitblog-googleapis', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCDCApeoMpSTQxvz14Yhh09zlsw8FhB2ck', [], null,true);
+
+    wp_enqueue_script('readitblog-google-map', get_template_directory_uri().'/js/google-map.js', [], null, true);
+
+    wp_enqueue_script('readitblog-main', get_template_directory_uri() . '/js/main.js', [], null, true);
+
 
     
-
-    wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array(), '1.0.1', true);
 
     wp_enqueue_style('iconic', get_template_directory_uri().'/css/open-iconic-bootstrap.min.css', array(), '0.1.0', 'all');
     wp_enqueue_style('animate', get_template_directory_uri().'/css/animate.css', array(), '0.1.0', 'all');
@@ -191,7 +194,7 @@ function be_register_blocks() {
     acf_register_block( array(
         'name'			=> 'tabs-block',
         'title'			=> __( 'Custom-Tabs', 'tabs' ),
-        'render_template'	=> 'template-parts/about/about-tab-ava.php',
+        'render_template'	=> 'template-parts/about/about-up.php',
         'category'		=> 'formatting',
         'icon'			=> 'admin-users',
         'mode'			=> 'preview',
@@ -200,7 +203,7 @@ function be_register_blocks() {
 
     acf_register_block( array(
         'name'			=> 'feedback-block',
-        'title'			=> __( 'Custom-feedback', 'feedback' ),
+        'title'			=> __( 'Custom-Feedback', 'feedback' ),
         'render_template'	=> 'template-parts/about/about-feedback.php',
         'category'		=> 'formatting',
         'icon'			=> 'admin-users',

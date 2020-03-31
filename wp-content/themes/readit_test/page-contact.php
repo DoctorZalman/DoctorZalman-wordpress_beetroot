@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="col-lg-6 d-flex">
-            <div id="map" class="bg-white"></div>
+            <div class="map" id="map"></div>
           </div>
         </div>
       </div>
@@ -42,5 +42,4 @@
    		<!-- ЦЕ ТРЕ РЕДАГУВ кінець -->
 
 
-<?php the_field('contacts_map');?>
   <?php get_footer(); ?>

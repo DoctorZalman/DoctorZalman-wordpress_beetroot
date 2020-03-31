@@ -8,6 +8,8 @@
         <?php if (is_single()) { $part = 'single';}?>
          <?php if (is_page()) { $part = 'contact';}?>
          <?php if (is_page()) { $part = 'about';}?>
+         <?php if (is_search()) { $part = 'search';}?>
+         <?php if (is_404()) { $part = '404';}?>
         <?php get_template_part('template-parts/titles/titles', $part);?>
 
       </div>
